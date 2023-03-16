@@ -1,10 +1,15 @@
 # Number-Recognition
 
-* This code is a Python script that demonstrates how to build and train a neural network model using TensorFlow and Keras to recognize handwritten digits from the MNIST dataset. 
-* The script loads the dataset, normalizes the input data, flattens the images to one-dimensional arrays, creates a neural network with three layers (one input, two hidden, and one output), compiles the model, trains the model, evaluates the model's accuracy, saves the trained model, and makes predictions using the saved model.
+This code demonstrates how to build and train a neural network to classify handwritten digits using the popular MNIST dataset. 
 
-* The script also creates a confusion matrix to evaluate the performance of the trained model. 
-* A confusion matrix is a table that summarizes the actual class labels of a set of samples against the predicted class labels of the same samples.
-* The rows of the matrix represent the actual (ground truth) class labels, while the columns represent the predicted class labels. 
-* The diagonal elements of the matrix represent the number of correctly predicted samples for each class, while the off-diagonal elements represent the number of incorrectly predicted samples. 
-* The confusion matrix is visualized as a heatmap using the seaborn library
+* The MNIST dataset consists of 70,000 grayscale images of size 28x28, representing the digits 0-9.
+
+* The code first loads the dataset using TensorFlow's built-in function, and then normalizes the pixel values of the images. It then flattens the 2D arrays of the images into 1D arrays for use in the neural network.
+
+* Next, the code defines a neural network with three layers: an input layer, two hidden layers, and an output layer. The input layer is simply a flattened version of the image data. The two hidden layers have 128 neurons each, with the ReLU activation function. The output layer has 10 neurons (one for each digit), with the softmax activation function.
+
+* The code then compiles the model with the Adam optimizer, sparse categorical cross-entropy loss function, and accuracy metric. It trains the model using the training data for one epoch, and then evaluates its performance on the test data.
+
+* The code also saves the trained model and loads it back for prediction. It predicts the labels of the test data and generates a confusion matrix to evaluate the model's performance. Finally, it visualizes the confusion matrix using a heatmap.
+
+* Overall, this code provides a basic example of building, training, and evaluating a neural network for image classification using TensorFlow and Keras. It can serve as a useful starting point for beginners looking to learn about deep learning.
